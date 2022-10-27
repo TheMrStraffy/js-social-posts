@@ -62,6 +62,8 @@ const likeButton = document.querySelector('.like-button');
 let content ='';
 
 
+
+
 invertDate();
 printPost();
 
@@ -116,4 +118,11 @@ function invertDate(){
         post.created = post.created.split("-").reverse().join("-");
     })
 }
-
+//cosi prendo le iniziali del nome ora come metterle all'immagine
+const {author : { name }} = posts[3];
+separateChar(name);
+function separateChar(name){
+  const word = name.split(' ').map(word => word[0]).join('');
+  console.log(word);
+  return word;
+}
